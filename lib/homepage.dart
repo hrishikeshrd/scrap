@@ -5,16 +5,30 @@ import 'package:scrap/about.dart';
 class Homepage extends StatefulWidget {
   @override
   _HomepageState createState() => _HomepageState();
+
 }
 
 class _HomepageState extends State<Homepage> {
+
   String dropdownValue = "Select Option";
   bool isExpanded = false;
   bool isExpanded2 = false;
 
+
+
   @override
+  
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+
+        },
+        backgroundColor: Colors.indigo, // Change color as needed
+        child: Icon(Icons.person, size: 30,color: Colors.white), // Add icon
+      ),
+
+
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black), // Change menu icon color
@@ -41,7 +55,13 @@ class _HomepageState extends State<Homepage> {
       drawer: Drawer(
         child: Container(
           width: 300,
-          color: Colors.black,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.black, Colors.black87], // Gradient colors
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),//
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -91,19 +111,6 @@ class _HomepageState extends State<Homepage> {
                     Container(
                       height: 40,
                       child: Text(
-                        "WHY URBAN SCRAPPER?",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Container(
-                      height: 40,
-                      child: Text(
                         "CONTACT",
                         style: TextStyle(
                           color: Colors.white,
@@ -113,32 +120,7 @@ class _HomepageState extends State<Homepage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
-                    Container(
-                      height: 40,
-                      child: Text(
-                        "CAREERS",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Container(
-                      height: 40,
-                      child: Text(
-                        "FAQs",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 2,
-                        ),
-                      ),
-                    ),
+
                   ],
                 ),
               ),
@@ -267,7 +249,7 @@ class _HomepageState extends State<Homepage> {
 
 
             Padding(
-              padding: const EdgeInsets.only(left: 20, top: 40, bottom: 0),
+              padding: const EdgeInsets.only(left: 20, top: 60, bottom: 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -325,7 +307,7 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
             AnimatedSize(
-              duration: Duration(milliseconds: 100),
+              duration: Duration(milliseconds: 200),
               curve: Curves.easeInOut,
 
               child: isExpanded
@@ -456,55 +438,163 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
             AnimatedSize(
-              duration: Duration(milliseconds: 300),
+              duration: Duration(milliseconds: 200),
               curve: Curves.easeInOut,
               child: isExpanded2
                   ? Container(
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.all(15),
+
                 decoration: BoxDecoration(
                   color: Colors.grey[100],
                   borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 5,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
+
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Heavy Melting Steel (HMS) 1 & 2 – Common steel scrap categorized based on thickness.",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Cast Iron – Includes engine blocks, pipes, and machinery parts.",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Steel Scrap – General steel scrap from construction, manufacturing, and demolition.",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Rebar Scrap – Reinforcing steel bars used in concrete structures.",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Sheet Metal Scrap – Thin steel sheets from manufacturing waste.",
-                      style: TextStyle(fontSize: 14),
-                    ),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 25,right: 25, top: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 1),
+                        child: Container(
+                          width:MediaQuery.of(context).size.width ,
+                          color: Color(0xFF000931),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Text(
+                              "Aluminium",
+                              style: TextStyle(color: Colors.white,fontSize: 16, fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ),
+                      ),Padding(
+                        padding: const EdgeInsets.only(bottom: 1),
+                        child: Container(
+                          width:MediaQuery.of(context).size.width ,
+                          color: Color(0xFF000931),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Text(
+                              "Brass",
+                              style: TextStyle(color: Colors.white,fontSize: 16, fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ),
+                      ),Padding(
+                        padding: const EdgeInsets.only(bottom: 1),
+                        child: Container(
+                          width:MediaQuery.of(context).size.width ,
+                          color: Color(0xFF000931),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Text(
+                              "Copper",
+                              style: TextStyle(color: Colors.white,fontSize: 16, fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ),
+                      ),Padding(
+                        padding: const EdgeInsets.only(bottom: 1),
+                        child: Container(
+                          width:MediaQuery.of(context).size.width ,
+                          color: Color(0xFF000931),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Text(
+                              "Lead",
+                              style: TextStyle(color: Colors.white,fontSize: 16, fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ),
+                      ),Padding(
+                        padding: const EdgeInsets.only(bottom: 1),
+                        child: Container(
+                          width:MediaQuery.of(context).size.width ,
+                          color: Color(0xFF000931),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Text(
+                              "Tin",
+                              style: TextStyle(color: Colors.white,fontSize: 16, fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Container(
+                          width:MediaQuery.of(context).size.width ,
+                          color: Color(0xFF000931),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Text(
+                              "Zinc",
+                              style: TextStyle(color: Colors.white,fontSize: 16, fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                    ],
+                  ),
                 ),
               )
                   : SizedBox.shrink(), // Empty space when not expanded
             ),
+            SizedBox(height: 20,),
+
+            Container(
+              height: 40,
+              width: 250,
+              decoration: BoxDecoration(
+                color: Color(0xFF000931),
+                borderRadius: BorderRadius.all(Radius.circular(5)),
+              ),
+              child: Center(child: Text('GET IN TOUCH', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,letterSpacing: 2),)),
+            ),
+
+            SizedBox(height: 80,),
+            Container(
+              width:MediaQuery.of(context).size.width ,
+              color: Colors.black,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 30, right: 30, top: 30, bottom: 40),
+                child: Center(
+                  child: Wrap(
+
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Container(
+                          width: 100, // Adjust logo width
+                          height: 100, // Adjust logo height
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/Black.png'), // Replace with your image path
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Container(
+                          height: 100,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("contact@urbanscrapper.com", style: TextStyle(color: Colors.white),),
+                              Text("+1 6146079235", style: TextStyle(color: Colors.white))
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            )
+
           ],
         ),
       ),

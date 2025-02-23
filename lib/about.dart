@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scrap/contactpage.dart';
 import 'package:scrap/homepage.dart';
 
 class AboutPage extends StatelessWidget {
@@ -36,7 +37,13 @@ class AboutPage extends StatelessWidget {
             children: [
               Container(
                 height: 250,
-                color: Colors.black,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Colors.black, Colors.black87], // Gradient colors
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
+                ),
                 child: Center(
                   child: Container(
                     height: 150,
@@ -64,7 +71,7 @@ class AboutPage extends StatelessWidget {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(builder: (context) => Homepage()),
-                            );
+                            ); // Navigate back to the homepage
                           },
                           child: Text(
                             "HOME",
@@ -77,30 +84,15 @@ class AboutPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
+
                       Container(
                         height: 40,
                         child: GestureDetector(
                           onTap: () {
-                            print("Services tapped"); // Replace with navigation logic for Services
-                          },
-                          child: Text(
-                            "SERVICES",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 5,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Container(
-                        height: 40,
-                        child: GestureDetector(
-                          onTap: () {
-                            print("Contact tapped"); // Replace with navigation logic for Contact
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (context) => ContactPage()),
+                            );
                           },
                           child: Text(
                             "CONTACT",
@@ -113,42 +105,9 @@ class AboutPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Container(
-                        height: 40,
-                        child: GestureDetector(
-                          onTap: () {
-                            print("Careers tapped"); // Replace with navigation logic for Careers
-                          },
-                          child: Text(
-                            "CAREERS",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 5,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Container(
-                        height: 40,
-                        child: GestureDetector(
-                          onTap: () {
-                            print("FAQs tapped"); // Replace with navigation logic for FAQs
-                          },
-                          child: Text(
-                            "FAQs",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 5,
-                            ),
-                          ),
-                        ),
-                      ),
+
+
+
                     ],
                   ),
                 ),
@@ -158,163 +117,102 @@ class AboutPage extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          color: Colors.white,
-          padding: EdgeInsets.all(20.0),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(height: 300,
+              // Background Image with Title
+              Container(
+                height: 250,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                    image: AssetImage('assets/About.jpg'), // Replace with your logo path
+                    image: AssetImage('assets/About.jpg'), // Replace with your image
                     fit: BoxFit.cover,
                   ),
                 ),
-              ),
-
-              SizedBox(height: 20),
-              // Description Section
-              Container(
-
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 30, right: 30),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 10,),
-                      Center(
-                        child: Text(
-                                          "BASICALLY WE EXPORT EXACTLY WHAT YOU'RE LOOKING FOR!",
-                                          style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.black87,
-                            ),
-                          ),
-                        ),
+                child: Center(
+                  child: Text(
+                    "ABOUT US",
+                    style: GoogleFonts.montserrat(
+                      textStyle: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        letterSpacing: 3,
                       ),
-
-                      SizedBox(height: 30,),
-
-                      Text(
-                        "ABOUT US",
-                        style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                            fontSize: 25,
-                            letterSpacing: -0.3, // Adjust font size as needed
-                            fontWeight: FontWeight.w700, // Adjust weight (normal, bold, etc.)
-                            color: Color(0xFF6a3e12), // Adjust color
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "At URBAN SCRAPPER LLC, we are committed to revolutionizing the scrap metal industry by bridging the gap between waste and opportunity. Based in the Ohio, we specialize in procurement, export, and distribution of high-quality ferrous and non-ferrous scrap metal, serving dealers, factories, and stakeholders worldwide.",
-                        style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black87,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-
-                      // Section: Vision
-                      Text(
-                        "OUR VISION",
-                        style: GoogleFonts.montserrat(
-                          textStyle:TextStyle(
-                            fontSize: 25,
-                            letterSpacing: -0.3, // Adjust font size as needed
-                            fontWeight: FontWeight.w700, // Adjust weight (normal, bold, etc.)
-                            color: Color(0xFF6a3e12), // Adjust color
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "To lead the global scrap metal industry by promoting environmental sustainability, fostering innovation, and driving value creation for our partners.",
-                        style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black87,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-
-                      // Section: Mission
-                      Text(
-                        "MISSION",
-                        style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                            fontSize: 25,
-                            letterSpacing: -0.3, // Adjust font size as needed
-                            fontWeight: FontWeight.w700, // Adjust weight (normal, bold, etc.)
-                            color: Color(0xFF6a3e12), // Adjust color
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "To transform waste into valuable resources through efficient procurement, export, and distribution practices while adhering to ethical and environmentally sustainable standards.",
-                        style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black87,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-
-                      // Section: Why Choose Us
-                      Text(
-                        "WHY US?",
-                        style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                            fontSize: 25,
-                            letterSpacing: -0.3, // Adjust font size as needed
-                            fontWeight: FontWeight.w700, // Adjust weight (normal, bold, etc.)
-                            color: Color(0xFF6a3e12), // Adjust color
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      Text(
-                        "- Expertise: Years of experience in the scrap metal industry with a deep understanding of global markets.\n"
-                            "- Efficiency: A well-organized logistics network that ensures smooth operations at every stage.\n"
-                            "- Sustainability: Commitment to eco-friendly practices that reduce environmental impact.\n"
-                            "- Customer Focus: Dedicated to delivering value and quality to our clients, every step of the way.",
-                        style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black87,
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ),
-            SizedBox(height: 40,),
-            Center(
-              child: Container(width: 300,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xFF040e41),
-              ),
-              height: 50,
+              SizedBox(height: 30),
+              // Main Content
 
-                child: Center(child: Text("CONTACT NOW", style: TextStyle(fontSize: 13,color: Colors.white, letterSpacing: 2,fontWeight: FontWeight.bold),)),
+              SizedBox(height: 10),
+              Text(
+                "With years of experience in the scrap metal industry, Urban Scrapper has established strong, long-term relationships with our customers. We believe in transparency, efficiency, and customer satisfaction, ensuring a seamless trading experience. Our commitment to reliability and integrity sets us apart in the global scrap market.",
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black87,
+                  ),
+                ),
               ),
-            ),
+              SizedBox(height: 30),
+              // Urban Scrapper in Three Words Section
+              Text(
+                "Urban Scrapper in Three Words",
+                style: GoogleFonts.montserrat(
+                  textStyle: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              _buildSection("Industrious",
+                  "Urban Scrapper is more than just a scrap broker; we specialize in exporting ferrous and non-ferrous scrap metals globally. By eliminating inefficiencies from retail processing, we focus on bulk trade, quality control, and logistics optimization. Our experienced team ensures smooth operations and quick inventory turnover, maximizing productivity every step of the way."),
+              SizedBox(height: 20),
+              _buildSection("Effective",
+                  "At Urban Scrapper, leadership is directly involved in daily operations, fostering a culture of precision and dedication. We value every customer requirement, no matter how small, and empower our employees to make decisions that enhance communication, internal processes, and operational efficiency. Our proactive approach ensures that we remain responsive and adaptable to market demands."),
+              SizedBox(height: 20),
+              _buildSection("Efficient",
+                  "With a well-established global supply chain, Urban Scrapper ensures efficient scrap collection and distribution. Our advanced inventory management system provides real-time tracking, minimizing waste and optimizing trade cycles. By streamlining logistics and financial operations, we guarantee competitive pricing, timely payments, and a smooth experience for all our partners."),
+              SizedBox(height: 40),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildSection(String title, String content) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
+          ),
+        ),
+        SizedBox(height: 10),
+        Text(
+          content,
+          style: GoogleFonts.montserrat(
+            textStyle: TextStyle(
+              fontSize: 16,
+              color: Colors.black87,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
